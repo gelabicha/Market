@@ -10,17 +10,19 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(schema = "public", name = "countries")
-public class Countries {
+@Table(schema = "public", name = "companies")
+public class Companies {
     @Id
     private Integer id;
-    @Column(name = "iso_code_2")
-    private String iso_code_2;
-    @Column(name = "iso_code_3")
+    @Column(name = "parent_id")
+    private Integer parent_id;
 
-    private String iso_code_3;
+    @Column(name = "country_id")
+    private Integer country_id;
+
     @Column(name = "name")
     private String name;
+
     @Column(name = "name_geo")
     private String name_geo;
 
