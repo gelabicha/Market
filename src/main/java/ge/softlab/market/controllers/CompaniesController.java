@@ -3,14 +3,13 @@ package ge.softlab.market.controllers;
 import ge.softlab.market.entities.Companies;
 import ge.softlab.market.entities.Countries;
 import ge.softlab.market.entities.Products;
+import ge.softlab.market.models.CompanyCreateModel;
 import ge.softlab.market.repositories.ProductsRepository;
 import ge.softlab.market.services.CompaniesService;
 import ge.softlab.market.services.CountriesService;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,4 +35,10 @@ public class CompaniesController {
     public List<Products> companiesProducts(@PathVariable Integer id){
         return companiesService.getCompaniesProducts(id);
     }
+    @PostMapping("companies")
+    public Companies companiesCreateNew(@RequestBody CompanyCreateModel companyCreateModel){
+        return companiesService.companiesCreateNew(companyCreateModel);
+    }
+
+
 }

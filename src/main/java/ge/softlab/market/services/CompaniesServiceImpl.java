@@ -2,6 +2,7 @@ package ge.softlab.market.services;
 
 import ge.softlab.market.entities.Companies;
 import ge.softlab.market.entities.Products;
+import ge.softlab.market.models.CompanyCreateModel;
 import ge.softlab.market.repositories.CompaniesRepository;
 import ge.softlab.market.repositories.ProductsRepository;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,21 @@ public class CompaniesServiceImpl implements CompaniesService {
       return productsRepository.findAllByCompanyId(id);
     }
 
+    @Override
+    public Companies companiesCreateNew(CompanyCreateModel companyCreateModel) {
+        Companies companies = new Companies();
+        companies.setParentid(companyCreateModel.parentId());
+        companies.setName(companyCreateModel.name());
+        companies.setNamegeo(companyCreateModel.nameGeo());
+        companies.setCountryid(companyCreateModel.countryId());
+        companies.setCreatedat(companyCreateModel.createdat());
+        companiesRepository.save(companies);
+
+
+
+        return companies;
+
+    }
 
 
 }
