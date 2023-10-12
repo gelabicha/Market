@@ -22,10 +22,10 @@ public class Products {
     private String ean;
 
     @Column(name = "name")
-    private String name;
+    private String pname;
 
     @Column(name = "company_id")
-    private Integer company_id;
+    private Integer companyId;
 
     @Column(name = "country_id")
     private Integer country_id;

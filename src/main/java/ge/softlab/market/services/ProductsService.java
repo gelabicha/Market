@@ -5,5 +5,5 @@ import ge.softlab.market.entities.Products;
 import java.util.List;
 
 public interface ProductsService {
-    List<Products> search(String name, String ean);
+    List<Products> search(String pname, String ean);
 }

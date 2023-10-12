@@ -14,6 +14,10 @@ public class ProductsServiceImpl implements ProductsService {
     private final ProductsRepository productsRepository;
     @Override
     public List<Products> search(String name, String ean) {
-        return productsRepository.findAll();
+        List<Products> allByPname = productsRepository.findAllByPname(name);
+        return allByPname;
+    }
+    public List<Products> search(String ean){
+        return productsRepository.findAllByEan(ean);
     }
 }

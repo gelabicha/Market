@@ -7,6 +7,11 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 @Entity
 @Getter
 @Setter
@@ -14,6 +19,7 @@ import lombok.Setter;
 public class Companies {
     @Id
     private Integer id;
+
     @Column(name = "parent_id")
     private Integer parent_id;
 
@@ -25,7 +31,6 @@ public class Companies {
 
     @Column(name = "name_geo")
     private String name_geo;
-
 
 
 }

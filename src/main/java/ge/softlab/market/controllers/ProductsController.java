@@ -18,7 +18,5 @@ public class ProductsController {
     @GetMapping("products")
     public List<Products>search(String name, String ean){
         return productsService.search(name,ean);
-
-
     }
 }
