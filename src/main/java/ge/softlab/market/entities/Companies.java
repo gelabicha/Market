@@ -31,6 +31,4 @@ public class Companies {
 
     @Column (name = "created_at")
     private LocalDateTime createdat;
-
-
 }

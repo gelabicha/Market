@@ -19,7 +19,6 @@ public class ProductsServiceImpl implements ProductsService {
         List<Products> allByPname = productsRepository.findAllByname(name);
         return allByPname;
     }
-
     @Override
     public Products productsCreateNew(ProductsCreateModel productsCreateModel) {
         Products products = new Products();
@@ -32,7 +31,6 @@ public class ProductsServiceImpl implements ProductsService {
         productsRepository.save(products);
         return products;
     }
-
     public List<Products> search(String ean){
         return productsRepository.findAllByEan(ean);
     }
