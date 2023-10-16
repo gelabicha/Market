@@ -17,7 +17,6 @@ public class Countries {
     @Column(name = "iso_code_2")
     private String iso_code_2;
     @Column(name = "iso_code_3")
-
     private String iso_code_3;
     @Column(name = "name")
     private String name;

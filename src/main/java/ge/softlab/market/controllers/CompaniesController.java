@@ -21,9 +21,9 @@ public class CompaniesController {
 
 
     @GetMapping("companies")
-    public List<Companies> search(String name, String name_geo) {
+    public List<Companies> search(String name, String nameGeo) {
 
-        return companiesService.search(name, name_geo);
+        return companiesService.search(name, nameGeo);
     }
 
     @GetMapping("companies/{id}")

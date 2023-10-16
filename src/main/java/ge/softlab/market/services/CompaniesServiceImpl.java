@@ -8,6 +8,8 @@ import ge.softlab.market.repositories.ProductsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -38,11 +40,8 @@ public class CompaniesServiceImpl implements CompaniesService {
         companies.setName(companyCreateModel.name());
         companies.setNamegeo(companyCreateModel.nameGeo());
         companies.setCountryid(companyCreateModel.countryId());
-        companies.setCreatedat(companyCreateModel.createdat());
+        companies.setCreatedat(LocalDateTime.now());
         companiesRepository.save(companies);
-
-
-
         return companies;
 
     }
